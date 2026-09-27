@@ -11,12 +11,12 @@ const getDate = (dateString: string): void => {
     console.log("Ошибка: Передана некорректная дата!");
     return;
   }
-  const day = addZero(date.getDate());
-  const month = addZero(date.getMonth() + 1); // +1, так как месяцы в JS начинаются с 0
-  const year = date.getFullYear();
-  const hours = addZero(date.getHours());
-  const minutes = addZero(date.getMinutes());
-  const seconds = addZero(date.getSeconds());
+  const day = addZero(date.getUTCDate());
+  const month = addZero(date.getUTCMonth() + 1); // +1, так как месяцы в JS начинаются с 0
+  const year = date.getUTCFullYear();
+  const hours = addZero(date.getUTCHours());
+  const minutes = addZero(date.getUTCMinutes());
+  const seconds = addZero(date.getUTCSeconds());
   const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
   console.log(formattedDate);
 };
